@@ -6,6 +6,7 @@
     <title>Vibe Place</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/adaptive.css">
 </head>
 <body>
     <div class="body">
@@ -37,6 +38,12 @@
                 </div>
             </div>
         </header>
+        <div class="mob-header">
+            <a href="./index.html" class="mob-logo"><i class="fa-solid fa-vihara"></i>&nbsp;VibePlace</a>
+            <button class="mob-search" id="mob-open-filter-modal">
+                <span><i class="fa-solid fa-magnifying-glass"></i> Начать поиск</span>
+            </button>
+        </div>
         <main>
             <div class="home-filter">
                 <div class="left">
@@ -106,12 +113,12 @@
                     </button>
                 </div>
             </div>
-            <div class="filter-modal">
+            <!-- <div class="filter-modal">
                 <button id="close-filter-modal"><i class="fa-solid fa-xmark"></i></button>
                 <div class="filter-modal-body">
                     dcsv
                 </div>
-            </div>
+            </div> -->
             <div class="home-products">
                     <div class="home-product">
                         <img src="./img/ballroom.jpg" alt="Product Image" class="card-img">
@@ -207,10 +214,166 @@
                 </div>
             </div>
         </main>
+        <div class="filter-modal">
+            <button id="close-filter-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div class="filter-modal-body">
+                dcsv
+            </div>
+        </div>
+        <div class="mob-main">
+            <div class="left">
+                <div class="filter-left">
+                    <div class="left-item">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Название</span>
+                    </div>
+
+                    <div class="left-item">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-building-user"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-face-smile"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-car"></i>
+                        <span>Название</span>
+                    </div>
+                    
+                    <div class="left-item">
+                        <i class="fa-solid fa-list"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-camera"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-city"></i>
+                        <span>Название</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-tree"></i>
+                        <span>Название для свадбы</span>
+                    </div>
+                    <div class="left-item">
+                        <i class="fa-solid fa-shop"></i>
+                        <span>Название</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mob-home-products">
+                <div class="mob-home-product">
+                    <img src="./img/ballroom.jpg" alt="Product Image" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Названия Зданий</h3>
+                        <div class="card-rating">
+                            ⭐⭐⭐⭐☆ (4.5)
+                        </div>
+                        <p class="card-description">
+                            Краткое описание товара. Максимально 2 строки.
+                        </p>
+                        <div class="card-footer">
+                            <span class="card-price">$99.99 за 1 человека</span>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+                <div class="mob-home-product"></div>
+            </div>
+            <button id="show-more-btn" class="show-more-btn">Показать еще</button>
+            <div class="new-organizations">
+                <h1>Новое Организации</h1>
+                <div class="organizations">
+                        <div class="organization">
+                            <img src="./img/ballroom.jpg">
+                            <div class="organization-body">
+                                <h2>Названия Зданий</h2>
+                                <p>Адрес Зданий</p>
+                            </div>
+                        </div>
+
+                        <div class="organization">
+                            <img src="./img/ballroom.jpg">
+                            <div class="organization-body">
+                                <h2>Названия Зданий</h2>
+                                <p>Адрес Зданий</p>
+                            </div>
+                        </div>
+                        <div class="organization">
+                            <img src="./img/ballroom.jpg">
+                            <div class="organization-body">
+                                <h2>Названия Зданий</h2>
+                                <p>Адрес Зданий</p>
+                            </div>
+                        </div>
+                        <div class="organization">
+                            <img src="./img/ballroom.jpg">
+                            <div class="organization-body">
+                                <h2>Названия Зданий</h2>
+                                <p>Адрес Зданий</p>
+                            </div>
+                        </div>
+                        <div class="organization">
+                            <img src="./img/ballroom.jpg">
+                            <div class="organization-body">
+                                <h2>Названия Зданий</h2>
+                                <p>Адрес Зданий</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="mob-header-bottom">
+                <a href="#">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span>Войти</span>
+                </a>
+                <a href="./pages/home.html">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Инфо</span>
+                </a>
+                <a href="#">
+                    <i class="fa-solid fa-address-book"></i>
+                    <span>Контакт</span>
+                </a>
+                
+                <a href="#">
+                    <i class="fa-solid fa-mars-double"></i>
+                    <span>Для суперпользователям</span>
+                </a>
+            </div>
+        </div>
         <footer>
             &copy;VibePlace Все права не защищены беспокойтесь!
         </footer>
     </div>
     <script src="./js/index.js" defer></script>
+    <script src="./js/adaptive.js"></script>
 </body>
 </html>

@@ -1,0 +1,179 @@
+@media (max-width: 768px) {
+    /* START INDEX PAGE */
+    body {
+        margin: 0 auto;
+        display: grid;
+        gap: 2rem;
+    }
+    .body {
+        font-size: 14px;
+        display: grid;
+        gap: unset;
+    }
+    header {
+        display: none;
+    }
+    .mob-header {
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        z-index: 20;
+        /* border-bottom: 1px solid #ccc; */
+        height: 60px;
+        padding: 0.5rem;
+        width: 100%;
+        background: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    .mob-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ddd;
+        padding: 0.5rem;
+        width: 30%;
+        border-radius: 10px;
+        font-size: 1rem;
+        text-decoration: none;
+        color: black;
+        background-image: linear-gradient(
+        to right, #a8f3f3, #eb04f0
+        );
+    }
+    .mob-search {
+        width: 68%;
+        border: none;
+        background: #ddd;
+        border-radius: 10px;
+        font-size: 1rem;
+        background-image: linear-gradient(
+        to right, #a8f3f3, #eb04f0
+        );
+    }
+    .mob-header i {
+        font-size: .75rem;
+    }
+    .filter-modal {
+        height: 100%;
+        width: 100%;
+    }
+
+    main {
+        display: none;
+    }
+    .mob-main {
+        display: grid;
+        gap: 1rem;
+        padding-top: 70px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .left-item {
+        min-width: 90px;
+        max-width: 90px;
+    }
+    .left-item:hover {
+        i {
+            font-size: 2rem;
+        }
+    }
+    .mob-home-products {
+        display: grid;
+        gap: .8rem;
+        transition: transform 0.5s ease-in-out;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .mob-home-product {
+        min-height: 23rem;
+        max-height: 23rem;
+        display: none;
+        flex-direction: column;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        min-height: 360px;
+    }
+    .mob-home-product:nth-child(-n+5) {
+        display: flex;
+    }
+    .show-more-btn {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-image: linear-gradient(
+        to right, #a8f3f3, #eb04f0
+        );
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .show-more-btn:hover {
+        background-color: #0056b3;
+    }
+
+    .organizations {
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+    .organization {
+        scroll-snap-align: start;
+        padding: unset;
+        min-width: unset;
+        max-width: unset;
+        min-width: 350px;
+        align-items: center;
+    }
+    .organization-body {
+        padding: 0.5rem;
+    }
+    .organizations::-webkit-scrollbar {
+        display: none;
+    }
+    .organization > img {
+        height: 250px;
+        border-radius: 6px 6px 0 0;
+    }
+    .mob-header-bottom {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 60px;
+        z-index: 20;
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 0.5rem;
+    }
+    .mob-header-bottom > a {
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .mob-header-bottom > a > i {
+        font-size: 2rem;
+        background-image: linear-gradient(
+            to right, #11e5e5, #eb04f0
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .mob-header-bottom > a > span {
+        font-weight: 600;
+    }
+
+    /* END INDEX PAGE */
+}
+@media (max-width: 768px) {
+    
+}

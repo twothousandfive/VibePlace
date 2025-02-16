@@ -21,6 +21,9 @@ header {
     z-index: 20;
     background: #fff;
 }
+.mob-header {
+    display: none;
+}
 header a {
     text-decoration: none;
 }
@@ -108,6 +111,9 @@ header a {
 main {
     display: grid;
     gap: 2rem;
+}
+.mob-main {
+    display: none;
 }
 
 .home-filter {
@@ -415,6 +421,9 @@ main {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+.mob-header-bottom {
+    display: none;
 }
 footer {
     font-size: 1.2rem;

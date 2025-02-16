@@ -58,22 +58,27 @@ filterLeft.addEventListener('scroll', checkScroll);
 
 
 document.addEventListener("DOMContentLoaded", function () {
+    const mobOpenModalBtn = document.getElementById("mob-open-filter-modal");
     const openModalBtn = document.getElementById("open-filter-modal");
     const closeModalBtn = document.getElementById("close-filter-modal");
     const modal = document.querySelector(".filter-modal");
+    const bodyC = document.querySelector("body");
 
     // Функция открытия модального окна
     function openModal() {
         modal.style.display = "flex";
+        bodyC.style.overflow = "hidden";
     }
 
     // Функция закрытия модального окна
     function closeModal() {
         modal.style.display = "none";
+        bodyC.style.overflow = "";
     }
 
     // Обработчики событий
     openModalBtn.addEventListener("click", openModal);
+    mobOpenModalBtn.addEventListener("click", openModal);
     closeModalBtn.addEventListener("click", closeModal);
     overlay.addEventListener("click", closeModal); // Закрытие при клике на фон
 });
