@@ -1,141 +1,67 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const profileDrop = document.querySelector(".menu-btn");
-    const dropContent = document.querySelector(".dropdown-content");
-    profileDrop.addEventListener("click", function (event) {
-        dropContent.classList.toggle("active")
-        event.stopPropagation();
-    });
-    document.addEventListener("click", function (event) {
-        if (!dropContent.contains(event.target) && !profileDrop.contains(event.target)) {
-            dropContent.classList.remove("active");
+// var testimonialItems = document.querySelectorAll(".item label");
+// var timer;
+// function cycleTestimonials(index) {
+//    timer = setTimeout(function() {
+//     var evt;
+//     if (document.createEvent){
+//       //If browser = IE, then polyfill
+//       evt = document.createEvent('MouseEvent');
+//       evt.initMouseEvent('click', true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+//     } else {
+//       //If Browser = modern, then create new MouseEvent
+//       evt = new MouseEvent("click", {
+//             view: window,
+//             bubbles: true,
+//             cancelable: true,
+//             clientX: 20
+//           });
+//     }
+//     var ele = "." + testimonialItems[index].className;
+//     var ele2 = document.querySelector(ele)
+//     ele2.dispatchEvent(evt);
+//     index++; // Increment the index
+//     if (index >= testimonialItems.length) {
+//       index = 0; // Set it back to `0` when it reaches `3`
+//     }
+//     cycleTestimonials(index); // recursively call `cycleTestimonials()`
+//     document.querySelector(".testimonials").addEventListener("click", function() {
+//       clearTimeout(timer); //stop the carousel when someone clicks on the div
+//     });
+//   }, 2000); //adjust scroll speed in miliseconds
+// }
+// //run the function
+// cycleTestimonials(0);
+
+
+
+
+
+
+var testimonialItems = document.querySelectorAll(".item label");
+var timer;
+
+function cycleTestimonials(index) {
+    timer = setTimeout(function() {
+        var ele2 = testimonialItems[index]; // Берём сам label
+        var radioInput = ele2.previousElementSibling; // Получаем <input> перед <label>
+        
+        if (radioInput) {
+            radioInput.checked = true; // Выбираем нужный radio
         }
-    });
-});
-
-
-// Находим элементы
-const filterPrev = document.querySelector('.filter-prev');
-const filterNext = document.querySelector('.filter-next');
-const filterLeft = document.querySelector('.filter-left');
-
-// Функция для проверки текущей позиции прокрутки
-function checkScroll() {
-  if (filterLeft.scrollLeft > 0) {
-    filterPrev.style.display = 'block';
-  } else {
-    filterPrev.style.display = 'none';
-  }
-    filterNext.style.display =
-        filterLeft.scrollWidth > filterLeft.clientWidth &&
-        filterLeft.scrollWidth - filterLeft.clientWidth - filterLeft.scrollLeft > 0
-        ? 'block'
-        : 'none';
+        
+        index++; // Следующий индекс
+        if (index >= testimonialItems.length) {
+            index = 0; // Вернёмся к первому
+        }
+        
+        cycleTestimonials(index); // Рекурсивный вызов
+    }, 2000); // Скорость в мс
 }
 
-// Обработчик клика по кнопке "next"
-filterNext.addEventListener('click', () => {
-  // Прокручиваем вправо на 120px (можно изменить значение)
-  filterLeft.scrollBy({
-    left: 120,
-    behavior: 'smooth'
-  });
-  // Немного задерживаем проверку, чтобы scrollLeft обновился
-  setTimeout(checkScroll, 300);
+// Останавливаем карусель при клике
+document.querySelector(".testimonials").addEventListener("click", function() {
+    clearTimeout(timer);
 });
 
-// Обработчик клика по кнопке "prev"
-filterPrev.addEventListener('click', () => {
-  // Прокручиваем влево на 120px
-  filterLeft.scrollBy({
-    left: -120,
-    behavior: 'smooth'
-  });
-  setTimeout(checkScroll, 300);
-});
-// Можно также отслеживать событие прокрутки, чтобы обновлять видимость кнопки в случае, если пользователь прокручивает вручную
-filterLeft.addEventListener('scroll', checkScroll);
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const openModalBtn = document.getElementById("open-filter-modal");
-    const closeModalBtn = document.getElementById("close-filter-modal");
-    const modal = document.querySelector(".filter-modal");
-
-    // Функция открытия модального окна
-    function openModal() {
-        modal.style.display = "flex";
-    }
-
-    // Функция закрытия модального окна
-    function closeModal() {
-        modal.style.display = "none";
-    }
-
-    // Обработчики событий
-    openModalBtn.addEventListener("click", openModal);
-    closeModalBtn.addEventListener("click", closeModal);
-    overlay.addEventListener("click", closeModal); // Закрытие при клике на фон
-});
-
-
-
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const products = document.querySelectorAll(".home-product");
-    products.forEach((product, index) => {
-        if (index >= 16) {
-            product.style.display = "none";
-        }
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const products = document.querySelectorAll(".home-product");
-    const productsPerPage = 16;
-    let currentPage = 1;
-    const totalPages = Math.ceil(products.length / productsPerPage);
-    
-    const prevButton = document.getElementById("prevPage");
-    const nextButton = document.getElementById("nextPage");
-    const pageNumber = document.getElementById("pageNumber");
-
-    function showPage(page) {
-        const start = (page - 1) * productsPerPage;
-        const end = start + productsPerPage;
-
-        products.forEach((product, index) => {
-            if (index >= start && index < end) {
-                product.style.display = "flex";
-            } else {
-                product.style.display = "none";
-            }
-        });
-
-        pageNumber.textContent = page;
-
-        // Блокируем кнопки, если достигли границы
-        prevButton.disabled = page === 1;
-        nextButton.disabled = page === totalPages;
-    }
-
-    prevButton.addEventListener("click", () => {
-        if (currentPage > 1) {
-            currentPage--;
-            showPage(currentPage);
-        }
-    });
-
-    nextButton.addEventListener("click", () => {
-        if (currentPage < totalPages) {
-            currentPage++;
-            showPage(currentPage);
-        }
-    });
-
-    // Показываем первую страницу при загрузке
-    showPage(currentPage);
-});
+// Запускаем карусель
+cycleTestimonials(0);
